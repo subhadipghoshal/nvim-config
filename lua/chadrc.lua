@@ -11,6 +11,19 @@ M.ui = {
 		Comment = { italic = true },
 		["@comment"] = { italic = true },
 	},
+
+  telescope = {
+    style = "borderless",
+    extensions_list = { "themes", "terms", "noice", "zoxide" },
+  },
+  term = {
+    float = {
+      row = 0.1,
+      col = 0.1,
+      width = 0.9,
+      height = 0.9,
+    }
+  }
 }
 
 return M

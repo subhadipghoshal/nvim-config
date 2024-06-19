@@ -31,10 +31,11 @@ require("lazy").setup({
 
   { import = "plugins" },
 
-  {
-    "startup-nvim/startup.nvim",
-    requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
-  },
+  -- {
+  --   "startup-nvim/startup.nvim",
+  --   lazy = false,
+  --   requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+  -- },
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
@@ -44,9 +45,9 @@ require("lazy").setup({
   -- {"nvim-tree/nvim-tree-web-devicons"},
 }, lazy_config)
 
-require("startup").setup({
-  theme = "evil"
-})
+-- require("startup").setup({
+--   theme = "evil"
+-- })
 
 local function nvim_tree_on_attach(bufnr)
   local api = require "nvim-tree.api"
@@ -61,11 +62,7 @@ end
 require'nvim-tree'.setup ({
   on_attach = nvim_tree_on_attach,
   view = {
-    relativenumber = true
-  },
-  disable_netrw = true,
-  update_focused_file = {
-    enable = true
+    adaptive_size = true,
   },
   filters = {
     dotfiles = true
@@ -75,6 +72,10 @@ require'nvim-tree'.setup ({
   },
   modified = {
     enable = true
+  },
+  git = {
+    enable = true,
+    ignore = false,
   }
 })
 
@@ -83,6 +84,7 @@ local harpoon = require('harpoon')
 harpoon:setup({})
 
 local conf = require("telescope.config").values
+
 local function toggle_telescope(harpoon_files)
     local file_paths = {}
     for _, item in ipairs(harpoon_files.items) do

@@ -5,7 +5,7 @@ local options = {
     html = { "prettier" },
     javascript = { "prettier" },
     typescript = { "prettier" },
-    python = { "black" },
+    python = { "isort", "black" },
     yaml = { "prettier" },
   },
 
