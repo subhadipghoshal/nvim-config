@@ -7,6 +7,7 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 map("n", "<leader>ff", ":Telescope <cr>")
+
 map("n", "<leader>ts", function()
   require("nvchad.term").toggle({ pos = "sp", id ='abc' })
 end, { desc = "Terminal toggle floating" })

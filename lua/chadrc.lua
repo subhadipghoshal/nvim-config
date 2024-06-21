@@ -23,6 +23,21 @@ M.ui = {
       width = 0.9,
       height = 0.9,
     }
+  },
+  nvimtree = {
+    view = {
+      adaptive_size = false,
+    },
+    sort = {
+      sorter = "case_sensitive",
+    },
+    modified = {
+      enable = true
+    },
+    git = {
+      enable = true,
+      ignore = false,
+    }
   }
 }
 

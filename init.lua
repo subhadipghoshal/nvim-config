@@ -49,36 +49,33 @@ require("lazy").setup({
 --   theme = "evil"
 -- })
 
-local function nvim_tree_on_attach(bufnr)
-  local api = require "nvim-tree.api"
-  local function opts(desc)
-    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-  end
-  api.config.mappings.default_on_attach(bufnr)
-  vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent,        opts('Up'))
-  vim.keymap.set('n', '?',     api.tree.toggle_help,                  opts('Help'))
-end
+-- local function nvim_tree_on_attach(bufnr)
+--   local api = require "nvim-tree.api"
+--   local function opts(desc)
+--     return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+--   end
+--   api.config.mappings.default_on_attach(bufnr)
+--   vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent,        opts('Up'))
+--   vim.keymap.set('n', '?',     api.tree.toggle_help,                  opts('Help'))
+-- end
 
-require'nvim-tree'.setup ({
-  on_attach = nvim_tree_on_attach,
-  view = {
-    adaptive_size = true,
-  },
-  filters = {
-    dotfiles = true
-  },
-  sort = {
-    sorter = "case_sensitive",
-  },
-  modified = {
-    enable = true
-  },
-  git = {
-    enable = true,
-    ignore = false,
-  }
-})
-
+-- require'nvim-tree'.setup ({
+--   on_attach = nvim_tree_on_attach,
+--   view = {
+--     adaptive_size = true,
+--   },
+--   sort = {
+--     sorter = "case_sensitive",
+--   },
+--   modified = {
+--     enable = true
+--   },
+--   git = {
+--     enable = true,
+--     ignore = false,
+--   }
+-- })
+--
 
 local harpoon = require('harpoon')
 harpoon:setup({})
