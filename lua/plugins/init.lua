@@ -90,6 +90,7 @@ return {
 
     end
   },
+  { "stevanmilic/nvim-lspimport" },
   {
     "tpope/vim-fugitive",
     lazy = false
