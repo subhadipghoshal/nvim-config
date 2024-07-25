@@ -31,51 +31,14 @@ require("lazy").setup({
 
   { import = "plugins" },
 
-  -- {
-  --   "startup-nvim/startup.nvim",
-  --   lazy = false,
-  --   requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
-  -- },
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" }
   },
 
-  -- {"nvim-tree/nvim-tree-web-devicons"},
+  {"nvim-tree/nvim-web-devicons"},
 }, lazy_config)
-
--- require("startup").setup({
---   theme = "evil"
--- })
-
--- local function nvim_tree_on_attach(bufnr)
---   local api = require "nvim-tree.api"
---   local function opts(desc)
---     return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
---   end
---   api.config.mappings.default_on_attach(bufnr)
---   vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent,        opts('Up'))
---   vim.keymap.set('n', '?',     api.tree.toggle_help,                  opts('Help'))
--- end
-
--- require'nvim-tree'.setup ({
---   on_attach = nvim_tree_on_attach,
---   view = {
---     adaptive_size = true,
---   },
---   sort = {
---     sorter = "case_sensitive",
---   },
---   modified = {
---     enable = true
---   },
---   git = {
---     enable = true,
---     ignore = false,
---   }
--- })
---
 
 local harpoon = require('harpoon')
 harpoon:setup({})
@@ -108,7 +71,7 @@ vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
 vim.keymap.set("n", "<C-s-p>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-s-n>", function() harpoon:list():next() end)
 
--- load theme
+-- load themes
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 

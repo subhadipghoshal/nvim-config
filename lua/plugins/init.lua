@@ -6,7 +6,11 @@ return {
       require "configs.conform"
     end,
   },
-
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"},
+    lazy = false
+  },
   -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
@@ -23,6 +27,26 @@ return {
        "html", "css"
   		},
   	},
+  },
+  {
+    "nvim-tree/nvim-web-devicons",
+    lazy = false
+  },
+  {
+    "tpope/vim-abolish",
+    lazy = false
+  },
+  {
+    'fei6409/log-highlight.nvim',
+    config = function()
+        require('log-highlight').setup{
+          extension = 'log',
+          pattern = {
+            '*log*.txt',
+            '*.log'
+          }
+        }
+    end,
   },
   {
     "Exafunction/codeium.nvim",
@@ -44,7 +68,8 @@ return {
       library = {
         -- See the configuration section for more details
         -- Load luvit types when the `vim.uv` word is found
-        { path = "luvit-meta/library", words = { "vim%.uv" } },
+        { path = "luvit-meta/library", words = { "vim%.uv" }},
+        { plugins = { "nvim-dap-ui" }, types = true }
       },
     },
   },
