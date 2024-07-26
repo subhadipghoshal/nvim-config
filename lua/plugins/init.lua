@@ -23,8 +23,7 @@ return {
   	"nvim-treesitter/nvim-treesitter",
   	opts = {
   		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css"
+  			"vim", "lua", "vimdoc", "html", "css", "python", "javascript", "typescript", "dockerfile", "markdown", "tsx", "yaml", "json", "toml"
   		},
   	},
   },
@@ -92,16 +91,6 @@ return {
      config = function()
          require("nvim-surround").setup({})
      end
-  },
-  {
-    "toppair/peek.nvim",
-    event = { "VeryLazy" },
-    build = "deno task --quiet build:fast",
-    config = function()
-        require("peek").setup()
-        vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-        vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
-    end,
   },
   { "rose-pine/neovim", name = "rose-pine" },
   {
